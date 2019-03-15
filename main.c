@@ -99,7 +99,7 @@ void teste(int a, int b) {
     //e no anterior do inicio de b no grupo de a se é igual a 1
     //se for verdade printa True
     } else if(C[a]->anterior != NULL && C[b]->anterior != NULL) {
-        if(C[a]->inicio->anterior->conjunto[C[b]->grupo] == 1 || C[a]->inicio->anterior->conjunto[C[b]->grupo] == 1) {
+        if(C[a]->inicio->anterior->conjunto[C[b]->grupo] == 1 || C[b]->inicio->anterior->conjunto[C[a]->grupo] == 1) {
             printf("\nTrue");
             return;
         }
