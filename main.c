@@ -34,8 +34,6 @@ void juntar(int a, int b) {
     } else if (C[a]->prox == 1 && C[b]->prox == 1) {
         C[a]->inicio->conjunto[C[b]->grupo] = 1;
         C[b]->inicio->conjunto[C[a]->grupo] = 1;
-        C[a]->inicio->anterior = C[b]->inicio;
-        C[b]->inicio->anterior = C[a]->inicio;
         if(C[a]->inicio->anterior != NULL && C[b]->inicio->anterior != NULL) {
             C[a]->inicio->anterior->conjunto[C[b]->grupo] = 1;
             C[b]->inicio->anterior->conjunto[C[a]->grupo] = 1;
@@ -46,6 +44,8 @@ void juntar(int a, int b) {
         else if(C[a]->inicio->anterior != NULL && C[b]->inicio->anterior == NULL) {
             C[b]->inicio->anterior->conjunto[C[a]->grupo] = 1;
         }
+        C[a]->inicio->anterior = C[b]->inicio;
+        C[b]->inicio->anterior = C[a]->inicio;
     }
 }
 
