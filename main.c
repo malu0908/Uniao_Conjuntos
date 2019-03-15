@@ -1,6 +1,6 @@
 #include <stdio.h> 
 #include <stdlib.h>
-#define TAMANHO 11
+#define TAMANHO 10000
 
 typedef struct no_ no;
 
@@ -73,7 +73,7 @@ void juntar(int a, int b) {
         //siginifica que apenas a foi unido com outro conjunto anteriormente
         //Faz as modificações feitas anteriormente só que apenas em a
         else if(C[a]->inicio->anterior != NULL && C[b]->inicio->anterior == NULL) {
-            C[b]->inicio->anterior->conjunto[C[a]->grupo] = 1;
+            C[a]->inicio->anterior->conjunto[C[b]->grupo] = 1;
         }
         //Aponta o anterior do início de a para o inicio de b
         //e o anterior do início de b para o inicio de a
